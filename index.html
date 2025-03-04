@@ -85,7 +85,8 @@
                                             <li><a href="research-committee.html">Research Committee</a></li>
                                             <li><a href="education-committee.html">Education & Training</a></li>
                                             <li><a href="clinical-practice.html">Clinical Practice Committee</a></li>
-                                            <li><a href="public-relations.html">Public Relations & Outreach Committee</a></li>
+                                            <li><a href="public-relations.html">Public Relations & Outreach
+                                                    Committee</a></li>
                                             <li><a href="membership-committee.html">Membership Committee</a></li>
                                             <li><a href="regional-reps.html">Regional Respresentatives</a></li>
 
@@ -642,7 +643,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <form id="contact-form">
+                        <form id="contact-form" >
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="name">Name</label>
@@ -666,7 +667,7 @@
                                     placeholder="Enter your Message"></textarea>
                             </div>
                             <div class="form-group">
-                                <button id="submit-btn" class="btn btn-light" type="submit">
+                                <button id="submit-btn" class="btn btn-light" type="button" onclick="sendEmail()">
                                     <i class="fa fa-paper-plane"></i>&nbsp;Send message
                                 </button>
                             </div>
@@ -741,12 +742,17 @@
     <!-- Scroll top -->
     <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
     <!--Plugins-->
-    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <!-- <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
+     <!-- Load EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <script src="js/jquery.js"></script>
     <script src="js/plugins.js"></script>
 
     <!--Template functions-->
     <script src="js/functions.js"></script>
+    <script src="script.js"></script>
+
 
 </body>
 
