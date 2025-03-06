@@ -13,11 +13,147 @@
     <!-- Stylesheets & Fonts -->
     <link href="css/plugins.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        :root {
+            --isolp-dark-blue: #0c3559;
+            --isolp-gold: #8B6C38;
+            --isolp-light-gold: #c4a96a;
+            --isolp-light-blue: #e5f0f9;
+            --isolp-bg-color: #f8f8f8;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: var(--isolp-bg-color);
+        }
+        
+        .membership-container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            /* padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.048); */
+        }
+        
+        .page-title {
+            color: var(--isolp-dark-blue);
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .section-title {
+            color: var(--isolp-dark-blue);
+            border-bottom: 2px solid var(--isolp-gold);
+            padding-bottom: 10px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .membership-list {
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+        
+        .membership-list li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .numbered-list li {
+            padding-left: 10px;
+        }
+        
+        .bullet-list li::before {
+            content: "";
+            position: absolute;
+            left: -20px;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background-color: var(--isolp-gold);
+            border-radius: 50%;
+        }
+        
+        .apply-button {
+            display: inline-block;
+            padding: 14px 28px;
+            background-color: var(--isolp-dark-blue);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid var(--isolp-dark-blue);
+            margin-top: 10px;
+        }
+        
+        .apply-button:hover {
+            background-color: var(--isolp-gold);
+            border-color: var(--isolp-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .card {
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: var(--isolp-light-blue);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .card-title {
+            color: var(--isolp-dark-blue);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--isolp-light-gold);
+            color: var(--isolp-dark-blue);
+            border-radius: 8px;
+        }
+        
+        .strong-text {
+            font-weight: 600;
+            color: var(--isolp-dark-blue);
+        }
+        
+        .email-link {
+            color: var(--isolp-dark-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .email-link:hover {
+            color: var(--isolp-gold);
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
     <div class="body-inner">
-     
+
         <!-- Header -->
         <header id="header" style="margin: 10px;">
             <div class="header-inner">
@@ -53,7 +189,8 @@
                                             <li><a href="research-committee.html">Research Committee</a></li>
                                             <li><a href="education-committee.html">Education & Training</a></li>
                                             <li><a href="clinical-practice.html">Clinical Practice Committee</a></li>
-                                            <li><a href="public-relations.html">Public Relations & Outreach Committee</a></li>
+                                            <li><a href="public-relations.html">Public Relations & Outreach
+                                                    Committee</a></li>
                                             <li><a href="membership-committee.html">Membership Committee</a></li>
                                             <li><a href="regional-reps.html">Regional Respresentatives</a></li>
 
@@ -69,81 +206,45 @@
                 </div>
             </div>
         </header>
-        <!-- end: Header -->
-        <!-- Page title -->
-        <!-- <section id="page-title " >
-            <div class="container">
-                <div class="page-title">
-                    <h1>Executive Council</h1>
+       
+        <!-- Main Content -->
+        <section>
+            <div class="membership-container">
+                <h1 class="page-title">Join the International Society of Laser Proctology</h1>
+                
+                <div class="card">
+                    <h3 class="card-title">Become Part of the Global Community</h3>
+                    <p>Join our prestigious organization of medical professionals dedicated to advancing the field of laser proctology. As a member, you'll gain access to exclusive resources, networking opportunities, and the latest research developments.</p>
                 </div>
-                <div class="breadcrumb">
-                    <ul>
-                        <li><a href="index.html">Home</a>
-                        </li>
-                        </li>
-                        
-                    </ul>
-                </div>
-            </div>
-        </section> -->
-        <section id="page-title" style="height: 400px; display: flex; align-items: center; justify-content: center; position: relative; 
-        background: url('images/committee01.jpeg') top/cover no-repeat;">
-            <div class=""
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.561);">
-            </div>
-            <div class="container" style="position: relative; z-index: 2; text-align: center;">
-                <div class="page-title">
-                    <h1 class="text-medium" style="color: white; font-size: 2.5rem;">Public Relations & Outreach Committee</h1>
-                </div>
-            </div>
-        </section>
+                
+                <h2 class="section-title">Eligibility Requirements</h2>
+                <ul class="membership-list bullet-list">
+                    <li>Have experience in managing proctological conditions</li>
+                    <li>Possess formal training as a surgeon, gastroenterologist, or dermatologist</li>
+                    <li>Have attended at least one laser workshop or training program</li>
+                    <li>Demonstrate an active interest in research</li>
+                </ul>
         
-        <!-- end: Page title -->
-        <!-- Content -->
-        <section class="background-white">
-            <div class="container">
-                <div class="heading-text heading-section text-center">
-                    <h2>THE PUBLIC RELATIONS AND OUTREACH COMMITTEE</h2>
-                </div>
-                <div class="row team-members team-members-shadow m-b-40">
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <div class="team-image" style="width: 250px; height: 250px; margin: 0 auto; overflow: hidden; position: relative;">
-                                <img src="images/male-profile.png" style="width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.3s ease;">
-                            </div>
-                            <div class="team-desc">
-                                <h3>Dr. Tony Sukentro</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <div class="team-image" style="width: 250px; height: 250px; margin: 0 auto; overflow: hidden; position: relative;">
-                                <img src="images/male-profile.png" style="width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.3s ease;">
-                            </div>
-                            <div class="team-desc">
-                                <h3>Dr. Mustapha Ouali</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <div class="team-image" style="width: 250px; height: 250px; margin: 0 auto; overflow: hidden; position: relative;">
-                                <img src="images/male-profile.png" style="width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.3s ease;">
-                            </div>
-                            <div class="team-desc">
-                                <h3>Dr. Sentilnathan Subramaniam</h3>
-                            </div>
-                        </div>
-                    </div>
-                   
-                  
-                 
-                  
+                <h2 class="section-title">Application Process</h2>
+                <ol class="membership-list numbered-list">
+                    <li><span class="strong-text">Confirm Eligibility</span> – Ensure you meet the membership criteria outlined above.</li>
+                    <li><span class="strong-text">Download the Application Form</span> – Available on our official website.</li>
+                    <li><span class="strong-text">Complete the Form & Gather Documents</span> – Fill out the application and compile necessary supporting materials.</li>
+                    <li><span class="strong-text">Submit Your Application</span> – Send the completed form and supporting documents to <a href="mailto:office@isolp.org" class="email-link"><strong>office@isolp.org</strong></a>.</li>
+                    <li><span class="strong-text">Application Review</span> – Our team will assess your submission and notify you of the outcome.</li>
+                </ol>
+                
+                <!-- <div class="contact-info">
+                    <p>Questions about membership? Contact our Membership Committee at <a href="mailto:membership@isolp.org" class="email-link">membership@isolp.org</a></p>
+                </div> -->
+        
+                <div class="button-container">
+                    <a href="images/applicationform.pdf" download="applicationform.pdf" target="_blank" class="apply-button">Download Membership Form</a>
+                    <p style="margin-top: 10px;">Kindly click button above to download application form</p>
                 </div>
             </div>
-            
         </section>
+
         <!-- Footer -->
         <footer id="footer">
             <div class="footer-content">
@@ -160,7 +261,7 @@
                                 <p class="mb-5">Together, we will shape the future of laser proctology, positioning it
                                     as a vital component in advancing gastrointestinal health and well-being globally
                                 </p>
-                                <a href="join.html" class="btn btn-inverted" target="_blank">Join US</a>
+                                <a href="" class="btn btn-inverted" target="_blank">Join US</a>
                                 <p>All rights reserved. Copyright © 2025. ISOLP</p>
                             </div>
                         </div>
@@ -181,7 +282,7 @@
                                     <div class="widget">
                                         <div class="widget-title">Support</div>
                                         <ul class="list">
-                                            <li><a href="join.html">Join Us</a></li>
+                                            <li><a href="#">Join Us</a></li>
                                             <li><a href="">Contact Us</a></li>
                                         </ul>
                                     </div>
@@ -199,7 +300,6 @@
                 </div>
             </div>
         </footer>
-
         <!-- end: Footer -->
     </div>
     <!-- end: Body Inner -->
@@ -210,8 +310,7 @@
     <script src="js/plugins.js"></script>
     <!--Template functions-->
     <script src="js/functions.js"></script>
+   
 </body>
-
-
 
 </html>
