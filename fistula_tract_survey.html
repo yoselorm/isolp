@@ -1162,7 +1162,7 @@
             try {
                 const formData = collectFormData();
                 
-                const response = await fetch(`${API_BASE_URL}submit-survey`, {
+                const response = await fetch(`${API_BASE_URL}submit_survey`, {
                     method: 'POST',
                     headers: headers,
                     body: JSON.stringify(formData)
