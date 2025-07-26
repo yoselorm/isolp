@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="ISOLP" />
+    <meta name="description" content="ISOLP Research Surveys | International Society of Laser Proctology">
+    <link rel="icon" type="image/png" href="images/isolpicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Research Surveys | ISOLP</title>
+    <!-- Stylesheets & Fonts -->
+    <link href="css/plugins.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .survey-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid #e8e8e8;
+        }
+
+        .survey-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .survey-status {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+
+        .status-active {
+            background: #e8f5e8;
+            color: #2d5a2d;
+        }
+
+        .status-upcoming {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-completed {
+            background: #f8f9fa;
+            color: #6c757d;
+        }
+
+        .survey-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .survey-meta i {
+            margin-right: 8px;
+            color: #0066cc;
+        }
+
+        .survey-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .survey-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .survey-committee {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #495057;
+        }
+
+        .survey-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn-survey {
+            background: linear-gradient(135deg, #0066cc, #004499);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-survey:hover {
+            background: linear-gradient(135deg, #0052a3, #003366);
+            transform: translateY(-2px);
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-survey-secondary {
+            background: transparent;
+            color: #0066cc;
+            border: 2px solid #0066cc;
+            padding: 10px 23px;
+        }
+
+        .btn-survey-secondary:hover {
+            background: #0066cc;
+            color: white;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #0066cc, #004499);
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .stats-row {
+            background: #f8f9fa;
+            padding: 40px 0;
+            margin-bottom: 50px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #0066cc;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body-inner">
+        <!-- Header -->
+        <header id="header" style="margin: 10px;">
+            <div class="header-inner">
+                <div class="container">
+                    <div id="logo">
+                        <a href="index.html">
+                            <img src="images/detailedlogo.png" alt="Logo" class="logo-default" style="width: 50px;">
+                        </a>
+                    </div>
+                    <div id="mainMenu-trigger"> <a class="lines-button x"><span class="lines"></span></a> </div>
+                    <div id="mainMenu">
+                        <div class="container">
+                            <nav>
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="exec-council.html">Executive Council</a></li>
+                                    <li><a href="events.html">Conferences & events</a></li>
+                                    <li><a href="research-surveys.html">Research</a></li>
+                                    <li class="dropdown"><a href="#">Members</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="advisory-council.html">Advisory Council</a></li>
+                                            <li><a href="research-committee.html">Research Committee</a></li>
+                                            <li><a href="education-committee.html">Education & Training</a></li>
+                                            <li><a href="clinical-practice.html">Clinical Practice Committee</a></li>
+                                            <li><a href="public-relations.html">Public Relations & Outreach
+                                                    Committee</a></li>
+                                            <li><a href="membership-committee.html">Membership Committee</a></li>
+                                            <li><a href="regional-reps.html">Regional Representatives</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Page Header -->
+        <!-- <div class="page-header">
+            <div class="container">
+                <h1>Research Surveys</h1>
+                <p>Contributing to the advancement of laser proctology through collaborative research</p>
+            </div>
+        </div> -->
+        <section id="page-title" style="height: 400px; display: flex; align-items: center; justify-content: center; position: relative; 
+        background: url('images/committee05.jpeg') center/cover no-repeat;">
+            <div class=""
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.542);">
+            </div>
+            <div class="container" style="position: relative; z-index: 2; text-align: center;">
+                <div class="page-title">
+                    <h1 class="text-medium" style="color: white; font-size: 2.5rem;">Research Surveys</h1>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Survey List -->
+        <section style="padding: 50px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 style="text-align: center; margin-bottom: 50px; font-size: 36px; color: #2c3e50;">Current
+                            Research Initiatives</h2>
+
+                        <!-- Active Survey -->
+                        <div class="survey-card">
+                            <div class="survey-status status-active">Active Survey</div>
+                            <!-- <div class="survey-meta">
+                                <i class="fa fa-calendar"></i>
+                                <span>Started: January 2025 | Deadline: March 31, 2025</span>
+                            </div> -->
+                            <h3 class="survey-title">Fistula Tract Cancer Survey</h3>
+                            <p class="survey-description">
+                                The Research and Clinical Committee of the International Society of Laser Proctology
+                                (ISoLP) is pleased to initiate this survey aimed at gaining insights into a rare but
+                                devastating complication of cryptoglandular fistulas—fistula tract cancer. This survey
+                                focuses specifically on fistulae occurring in individuals classified as “normal-risk”
+                                (i.e. no high risk for cancer like Immunosuppression) with cryptoglandular fistula.
+                            </p>
+                            <p class="survey-description">
+                                While this initiative is primarily organized by ISoLP, we extend an open invitation to
+                                experts and specialists in the field of colorectal and proctological surgery worldwide
+                                to contribute their valuable perspectives.
+                            </p>
+                            <p class="survey-description">
+                                Your participation will provide crucial information to better understand this complex
+                                condition and aid in decision-making for the management of future patients.
+                            </p>
+                            <div class="survey-committee">
+                                <strong>Organized by:</strong> ISoLP Research and Clinical Practice Committee
+                            </div>
+                            <div class="survey-actions">
+                                <a target="_blank" href="fistula_tract_survey.html" class="btn-survey">
+                                    <i class="fa fa-clipboard-list" style="margin-right: 8px;"></i>
+                                    Take Survey
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <!-- Upcoming Surveys -->
+                        <!-- <div class="survey-card">
+                            <div class="survey-status status-upcoming">Upcoming Survey</div>
+                            <div class="survey-meta">
+                                <i class="fa fa-calendar"></i>
+                                <span>Expected Launch: April 2025</span>
+                            </div>
+                            <h3 class="survey-title">Laser Technology Preferences in Proctological Procedures</h3>
+                            <p class="survey-description">
+                                A comprehensive study examining the current preferences and practices of proctologists
+                                regarding different laser technologies, treatment outcomes, and patient satisfaction
+                                rates across various proctological conditions.
+                            </p>
+                            <div class="survey-committee">
+                                <strong>Organized by:</strong> ISoLP Education & Training Committee
+                            </div>
+                          
+                        </div> -->
+
+                        <!-- <div class="survey-card">
+                            <div class="survey-status status-upcoming">Upcoming Survey</div>
+                            <div class="survey-meta">
+                                <i class="fa fa-calendar"></i>
+                                <span>Expected Launch: June 2025</span>
+                            </div>
+                            <h3 class="survey-title">Global Training Standards for Laser Proctology</h3>
+                            <p class="survey-description">
+                                This survey will assess current training methodologies, certification requirements, and
+                                educational gaps in laser proctology training programs worldwide, with the goal of
+                                establishing standardized global training protocols.
+                            </p>
+                            <div class="survey-committee">
+                                <strong>Organized by:</strong> ISoLP Education & Training Committee
+                            </div>
+                          
+                        </div> -->
+
+                        <!-- Call to Action -->
+                        <div
+                            style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 50px; border-radius: 12px; text-align: center; margin-top: 50px;">
+                            <h3 style="color: #2c3e50; margin-bottom: 20px; font-size: 28px;">Have a Research Idea?</h3>
+                            <p style="color: #666; font-size: 16px; margin-bottom: 30px;">
+                                We welcome research proposals from ISoLP members and the global medical community.
+                                Submit your research ideas and collaborate with us to advance laser proctology.
+                            </p>
+                            <a href="mailto:office@isolp.org" class="btn-survey">
+                                <i class="fa fa-envelope" style="margin-right: 8px;"></i>
+                                Submit Research Proposal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="footer-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="widget">
+                                <div class="footer-logo">
+                                    <img src="images/mainlogo.png" alt="International Society of Laser Proctology Logo"
+                                        style="max-width: 150px; margin-bottom: 15px;">
+                                </div>
+                                <div class="widget-title">International Society of Laser Proctology</div>
+                                <p class="mb-5">Together, we will shape the future of laser proctology, positioning it
+                                    as a vital component in advancing gastrointestinal health and well-being globally
+                                </p>
+                                <a href="join.html" class="btn btn-inverted" target="_blank">Join US</a>
+                                <p>All rights reserved. Copyright © 2025. ISOLP</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="widget">
+                                        <div class="widget-title">Discover</div>
+                                        <ul class="list">
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="exec-council.html">Executive Council</a></li>
+                                            <li><a href="events.html">Conferences & Events</a></li>
+                                            <li><a href="research.html">Research</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="widget">
+                                        <div class="widget-title">Support</div>
+                                        <ul class="list">
+                                            <li><a href="join.html">Join Us</a></li>
+                                            <li><a href="">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-content">
+                <div class="container">
+                    <div class="copyright-text text-center">&copy; 2025 ISoLP - International Society of Laser
+                        Proctology. All Rights Reserved.</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
+    <script src="js/jquery.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/functions.js"></script>
+</body>
+
+</html>

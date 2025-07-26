@@ -53,6 +53,7 @@
                                     <li class="dropdown"><a href="about.html">About</a></li>
                                     <li class="dropdown"><a href="exec-council.html">Executive Council</a></li>
                                     <li class="dropdown"><a href="events.html">Conferences & events</a></li>
+                                    <li class="dropdown"><a href="research-surveys.html">Research</a></li>
 
 
                                     <li class="dropdown"><a href="#">Members</a>
@@ -728,14 +729,75 @@
     <!--Plugins-->
     <!-- <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script> -->
     <!-- Load EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // API Configuration
+        const API_BASE_URL = 'https://api.isolp.org/api/';
+        const API_TOKEN = 'ISOLP654';
+    
+        const headers = {
+            'Authorization': `Bearer ${API_TOKEN}`,
+            'Content-Type': 'application/json'
+        };
+    
+        // Attach event to button
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('submit-btn').addEventListener('click', sendEmail);
+        });
+    
+        function sendEmail() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+    
+            if (!name || !email || !phone || !message) {
+                alert('Please fill out all fields.');
+                return;
+            }
+    
+            const payload = {
+                full_name: name,
+                email: email,
+                phone: phone,
+                message: message
+            };
+    
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Sending...';
+    
+            fetch(`${API_BASE_URL}contact`, {
+                method: 'POST',
+                headers: headers,
+                body: JSON.stringify(payload)
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Network error');
+                return response.json();
+            })
+            .then(data => {
+                alert('Message sent successfully!');
+                document.getElementById('contact-form').reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to send message.');
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fa fa-paper-plane"></i>&nbsp;Send message';
+            });
+        }
+    </script>
+    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script> -->
 
     <script src="js/jquery.js"></script>
     <script src="js/plugins.js"></script>
 
     <!--Template functions-->
     <script src="js/functions.js"></script>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
 
 
 </body>
