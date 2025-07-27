@@ -324,6 +324,12 @@
                 font-size: 16px;
             }
         }
+
+        .btn-submit[disabled] {
+    background-color: #ccc;
+    pointer-events: none;
+}
+
     </style>
 </head>
 
@@ -915,10 +921,14 @@
                     </div>
                 </div>
 
-            <button type="submit" class="btn-submit" id="submitBtn">
-                <div class="loading-spinner" id="loadingSpinner"></div>
-                Submit Survey
-            </button>
+                <button type="submit" class="btn-submit" id="submitBtn" disabled style="opacity: 0.6; cursor: not-allowed;">
+                    <div class="loading-spinner" id="loadingSpinner"></div>
+                    Submit Survey
+                </button>
+                <p style="font-size: 0.9rem; color: #888; margin-top: 8px; text-align: center; color: red; font-weight: 500;">
+                    Survey will start receiving responses August 2025.
+                </p>
+                
         </form>
 
         <div class="success-message" id="successMessage">
