@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ISoLP RDG Screening Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f5f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            background: #fff;
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #003366;
+            font-size: 28px;
+        }
+
+        h3 {
+            color: #003366;
+            margin-top: 35px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #C89F6C;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 15px;
+            display: block;
+        }
+
+        .question {
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .checkbox-group {
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+
+        .checkbox-group label {
+            font-weight: normal;
+            display: block;
+            margin-top: 5px;
+        }
+
+        button {
+            width: 100%;
+            background: #0066cc;
+            color: white;
+            padding: 14px;
+            margin-top: 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #004fa3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .success, .error {
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .success {
+            background: #e8ffe8;
+            color: #267326;
+        }
+
+        .error {
+            background: #ffe8e8;
+            color: #a12626;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>ISoLP SiLaC & EPSiT Recommendation Development Group<br>Screening Form</h1>
+
+    <form id="rdgForm">
+
+        <!-- NAME & EMAIL -->
+        <label>Name:</label>
+        <input type="text" name="name" required>
+
+        <label>Email:</label>
+        <input type="email" name="email" required>
+
+        <!-- SECTION 1 -->
+        <h3>SECTION 1 — Clinical Experience</h3>
+
+        <div class="question">1. Do you regularly diagnose and manage patients with pilonidal sinus disease (PSD)?</div>
+        <select name="regularly_manage_psd" required>
+            <option value="">Select...</option>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <div class="question">2. Approximately how many PSD cases do you treat per year?</div>
+        <select name="cases_per_year" required>
+            <option value="">Select...</option>
+            <option><10</option>
+            <option>10–30</option>
+            <option>30–60</option>
+            <option>>60</option>
+        </select>
+
+        <div class="question">3. Which PSD techniques do you personally perform? (Select all that apply)</div>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="techniques_performed" value="silac"> SiLaC</label>
+            <label><input type="checkbox" name="techniques_performed" value="e-silac"> E-SiLaC</label>
+            <label><input type="checkbox" name="techniques_performed" value="epsit"> EPSiT</label>
+            <label><input type="checkbox" name="techniques_performed" value="open"> Open / Flap procedures</label>
+
+            <label>
+                <input type="checkbox" id="other_technique" value="other"> Other
+            </label>
+
+            <input type="text" id="other_technique_input" class="hidden" placeholder="Please specify">
+        </div>
+
+        <div class="question">4. How many SiLaC or EPSiT procedures have you performed in total?</div>
+        <select name="total_silac_epsit" required>
+            <option value="">Select...</option>
+            <option><20</option>
+            <option>20–50</option>
+            <option>50–100</option>
+            <option>>100</option>
+        </select>
+
+        <div class="question">5. Do you routinely use imaging (US/MRI) in PSD evaluation?</div>
+        <select name="imaging_used" required>
+            <option value="">Select...</option>
+            <option>US</option>
+            <option>MRI</option>
+            <option>Both</option>
+            <option>No</option>
+        </select>
+
+
+        <!-- SECTION 2 -->
+        <h3>SECTION 2 — Academic & Scientific Background</h3>
+
+        <div class="question">6. Have you published research related to PSD or minimally invasive proctology?</div>
+        <select name="published_research" required>
+            <option value="">Select...</option>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <div class="question">7. Do you have experience in literature review or evidence-based medicine?</div>
+        <select name="literature_experience" required>
+            <option value="">Select...</option>
+            <option>Yes</option>
+            <option>Limited</option>
+            <option>No</option>
+        </select>
+
+        <div class="question">8. Are you familiar with GRADE or AGREE II?</div>
+        <select name="familiar_grade_agree" required>
+            <option value="">Select...</option>
+            <option>Yes</option>
+            <option>Partially</option>
+            <option>No</option>
+        </select>
+
+
+        <!-- SECTION 3 -->
+        <h3>SECTION 3 — Participation Requirements</h3>
+
+        <div class="question">9. Are you willing to actively contribute to drafting recommendations?</div>
+        <select name="contribute_recommendations" required>
+            <option value="">Select...</option>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <div class="question">10. Are you available for regular online meetings and monthly deadlines?</div>
+        <select name="available_meetings" required>
+            <option value="">Select...</option>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <div class="question">11. Can you contribute written sections or literature extraction?</div>
+        <select name="contribute_writing" required>
+            <option value="">Select...</option>
+            <option>Yes</option>
+            <option>Possibly</option>
+            <option>No</option>
+        </select>
+
+
+        <!-- SECTION 4 -->
+        <h3>SECTION 4 — Professional Background</h3>
+
+        <div class="question">12. Do you hold a recognized medical qualification (MD/DO or equivalent)?</div>
+        <select name="medical_qualification" required>
+            <option value="">Select...</option>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <div class="question">13. What is your current specialty?</div>
+        <select name="specialty" required>
+            <option value="">Select...</option>
+            <option>General Surgery</option>
+            <option>Colorectal</option>
+            <option>Proctology</option>
+            <option>Pediatric</option>
+            <option>Other</option>
+        </select>
+
+        <div class="question">14. How many years have you managed PSD patients?</div>
+        <select name="years_managed_psd" required>
+            <option value="">Select...</option>
+            <option><3</option>
+            <option>3–7</option>
+            <option>7–15</option>
+            <option>>15</option>
+        </select>
+
+
+        <!-- SECTION 5 -->
+        <h3>SECTION 5 — Conflicts of Interest & Diversity</h3>
+
+        <div class="question">15. Do you have any financial or professional relationship with relevant industry?</div>
+        <select name="industry_relationship" id="industry_relationship" required>
+            <option value="">Select...</option>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <label>If yes, specify:</label>
+        <input type="text" name="relationship_details" id="relationship_details" class="hidden">
+
+        <div class="question">16. Country and clinical setting</div>
+        <label>Country:</label>
+        <input type="text" name="country" required>
+
+        <label>Clinical setting: (Public hospital,Private Clinic,Mixed Practice)</label>
+        <input type="text" name="clinical_setting" required>
+
+
+        <button type="submit">Submit</button>
+
+        <div class="success" id="successMessage">Your form has been submitted successfully!</div>
+        <div class="error" id="errorMessage">Submission failed. Please try again.</div>
+
+    </form>
+</div>
+
+<script>
+    // Other technique toggle
+    document.getElementById("other_technique").addEventListener("change", function () {
+        const field = document.getElementById("other_technique_input");
+        field.classList.toggle("hidden", !this.checked);
+    });
+
+    // Industry relationship toggle
+    document.getElementById("industry_relationship").addEventListener("change", function () {
+        const field = document.getElementById("relationship_details");
+        field.classList.toggle("hidden", this.value !== "Yes");
+    });
+
+    // Submit logic
+    document.getElementById("rdgForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        let data = {};
+
+        // Capture checkboxes properly
+        let techniques = [];
+        document.querySelectorAll("input[name='techniques_performed']:checked").forEach(cb => {
+            techniques.push(cb.value);
+        });
+
+        // Add "other" technique text if provided
+        if (document.getElementById("other_technique").checked) {
+            techniques.push(document.getElementById("other_technique_input").value);
+        }
+
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+
+        data.techniques_performed = techniques;
+
+        try {
+            const res = await fetch("https://api.isolp.org/api/rdg", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
+
+            if (res.ok) {
+                document.getElementById("successMessage").style.display = "block";
+            } else {
+                document.getElementById("errorMessage").style.display = "block";
+            }
+
+        } catch (err) {
+            document.getElementById("errorMessage").style.display = "block";
+        }
+    });
+</script>
+
+</body>
+</html>
